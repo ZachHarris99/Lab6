@@ -1,0 +1,25 @@
+The constructor seems to work fine. It makes an empty list. I'm not sure how to test the destructor so I'm assuming that works fine too.
+
+It's a given that toVector works.
+
+addFront seems to work fine. It adds the value I provide to an empty list and it also adds it to the front of a non-empty list. It also increments the size by one.
+
+addBack does not work properly. It appears to just add values to the front of lists. Like addFront, it increments the size by one.
+
+removeFront returns false if the given list is empty, but it also returns false if it's not empty. removeFront doesn't actually appear to remove any values whatsoever.
+
+removeBack is the same story as removeFront. It never removes anything.
+
+Something is wrong with isEmpty. It never returns false.
+
+It looks like size is working. It correctly displays the number of integers in the list. removeFront and removeBack don't decrement the value of size, but they don't actually remove anything so size() is still correct.
+
+Search appears to work as well. It returns false if the list is empty or the value is not found in the list. It returned true for every value I tested that was actually in the list.
+
+/////////////////Here are my best guesses at the bugs:
+
+addBack either looks exactly the same as addFront or it just calls addFront with the value provided.
+
+removeFront and removeBack just return false and that's it. Maybe there's an if statement block that is never reached.
+
+isEmpty always returns true.
